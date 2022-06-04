@@ -7,21 +7,20 @@ from math import sqrt
 class Array(list):
     def __init__(self, items: list):
         self.extend(items)
-        self.sort()
 
     def mean(self) -> float | int:
         return sum(self) / len(self)
 
     def median(self) -> float | int:
-        return self[(len(self)-1)//2] if len(self) % 2 == 1 else ((self[(len(self))//2]+self[(len(self))//2])/2)
+        return sorted(self)[(len(self)-1)//2] if len(self) % 2 == 1 else ((sorted(self)[(len(self))//2]+sorted(self)[(len(self))//2])/2)
 
     def mode(self) -> list | float | int | None:
         modes = []
 
         for i in range(len(self)):
             if i+1 < len(self):
-                if self[i] == self[i+1] and self[i] not in modes:
-                    modes.append(self[i])
+                if sorted(self)[i] == sorted(self)[i+1] and sorted(self)[i] not in modes:
+                    modes.append(sorted(self)[i])
 
         return modes if len(modes) > 1 else modes[0] if len(modes) == 1 else None
 
@@ -46,9 +45,20 @@ class Array(list):
     def std_deviation(self) -> float | int:
         return sqrt(self.variance())
 
+    def unique(self) -> list:
+        u = []
+
+        for i in self:
+            if i not in u:
+                u.append(i)
+        
+        return u
+
 
 myArray = Array(items=[21, 4, 22, 12, 19, 18, 15, 7, 21, 9, 7])
 print(myArray)
+print(myArray.mean())
 print(myArray.median())
 print(myArray.mode())
 print(myArray.std_deviation())
+print(myArray.unique())
