@@ -44,13 +44,13 @@ class GeometricProgression:
 
     @staticmethod
     def get_term_seq(seq: list, n: int) -> float:
-        return seq[0]*(GeometricProgression.get_diff(seq)**(n-1))
+        return seq[0]*(GeometricProgression.get_diff(seq)**(n-1)) # But it will be same as seq[n-1], if n-1 index exists
 
 
-myGP = GeometricProgression.sequence(2, 5)
-print(myGP)
-print(GeometricProgression.get_diff(myGP))
-print(GeometricProgression.get_term_a1(2, 4, 2))
-print(GeometricProgression.get_term_seq(myGP, 4))
-print(GeometricProgression.get_sum(myGP))
-print(GeometricProgression.get_mid_term(myGP))
+# myGP = GeometricProgression.sequence(2, 5)
+# print(myGP)
+# print(GeometricProgression.get_diff(myGP))
+# print(GeometricProgression.get_term_a1(2, 4, 2))
+# print(GeometricProgression.get_term_seq(myGP, 4))
+# print(GeometricProgression.get_sum(myGP))
+# print(GeometricProgression.get_mid_term(myGP))

@@ -55,10 +55,10 @@ class Array(list):
         return u
 
 
-myArray = Array(items=[21, 4, 22, 12, 19, 18, 15, 7, 21, 9, 7])
-print(myArray)
-print(myArray.mean())
-print(myArray.median())
-print(myArray.mode())
-print(myArray.std_deviation())
-print(myArray.unique())
+# myArray = Array(items=[21, 4, 22, 12, 19, 19, 18, 15, 7, 21, 9, 7, 10, 11, 19, 15, 7, 13, 13, 7])
+# print(myArray)
+# print(myArray.mean())
+# print(myArray.median())
+# print(myArray.mode())
+# print(myArray.std_deviation())
+# print(myArray.unique())

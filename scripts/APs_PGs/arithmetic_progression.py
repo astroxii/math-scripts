@@ -41,13 +41,13 @@ class ArithmeticProgression:
 
     @staticmethod
     def get_term_seq(seq: list, n: int) -> float:
-        return seq[0] + (n - 1) * ArithmeticProgression.get_diff(seq)
+        return seq[0] + (n - 1) * ArithmeticProgression.get_diff(seq) # But it will be same as seq[n-1], if n-1 index exists
 
 
-myAP = ArithmeticProgression.sequence(2.5, 5)
-print(myAP)
-print(ArithmeticProgression.get_diff(myAP))
-print(ArithmeticProgression.get_term_a1(2.5, 3, 2.5))
-print(ArithmeticProgression.get_term_seq(myAP, 2))
-print(ArithmeticProgression.get_sum(myAP))
-print(ArithmeticProgression.get_mid_term(myAP))
+# myAP = ArithmeticProgression.sequence(2.5, 5)
+# print(myAP)
+# print(ArithmeticProgression.get_diff(myAP))
+# print(ArithmeticProgression.get_term_a1(2.5, 3, 2.5))
+# print(ArithmeticProgression.get_term_seq(myAP, 2))
+# print(ArithmeticProgression.get_sum(myAP))
+# print(ArithmeticProgression.get_mid_term(myAP))
