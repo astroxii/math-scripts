@@ -6,6 +6,7 @@ from math import sqrt
 
 class Array(list):
     def __init__(self, items: list):
+        super().__init__()
         self.extend(items)
 
     def mean(self) -> float | int:
