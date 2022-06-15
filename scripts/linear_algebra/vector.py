@@ -35,9 +35,14 @@ class Vector:
         return f"Vector {str(self.dimension)}D <X={self.x}, Y={self.y}{f', Z={self.z}>' if self.z != None else '>'}"
 
 
+# Positions at a R² plane
+p1 = (4, 1)
+p2 = (7, 5)
 
-v1 = Vector(1, 2, 2)
-v2 = Vector(-1, 0, 2)
+# Vectors
+v1 = Vector(p2[0]-p1[0], p2[1]-p1[1])
+v2 = Vector(5, 2)
 print(v1)
-print(v1.dot_product(v1))
+print(v1.modulus())
+print(v1.dot_product(v2))
 print(v1.angle_to(v2))
