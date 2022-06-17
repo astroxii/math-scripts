@@ -1,5 +1,8 @@
 import math
 
+# Script by astroxii @ 2022
+# Have fun!
+
 
 class Vector:
     def __init__(self, x: int | float = None, y: int | float = None, z: int | float = None) -> None:
