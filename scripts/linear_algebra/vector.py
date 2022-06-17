@@ -7,6 +7,7 @@ import math
 class Vector:
     def __init__(self, x: int | float = None, y: int | float = None, z: int | float = None) -> None:
         assert x != None and y != None, "Vector must have at least two dimensions."
+        assert type(x+y) == int or type(x+y) == float, "Axis must be numeric."
         assert abs(x) + abs(y) > 0, "Vector is null."
 
         self.x = x
