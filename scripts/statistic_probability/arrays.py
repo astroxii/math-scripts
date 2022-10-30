@@ -15,15 +15,17 @@ class Array(list):
     def median(self) -> float | int:
         return sorted(self)[(len(self)-1)//2] if len(self) % 2 == 1 else ((sorted(self)[(len(self))//2]+sorted(self)[(len(self))//2])/2)
 
-    def mode(self) -> list | float | int | None:
-        modes = []
+    def mode(self) -> dict | None:
+        modes = {}
 
         for i in range(len(self)):
             if i+1 < len(self):
                 if sorted(self)[i] == sorted(self)[i+1] and sorted(self)[i] not in modes:
-                    modes.append(sorted(self)[i])
+                    modes[sorted(self)[i]] = 0
+                elif sorted(self)[i] in modes:
+                    modes[sorted(self)[i]] += 1
 
-        return modes if len(modes) > 1 else modes[0] if len(modes) == 1 else None
+        return modes if modes else None
 
     def deviation(self) -> list:
         d = []
@@ -56,7 +58,7 @@ class Array(list):
         return u
 
 
-# myArray = Array(items=[21, 4, 22, 12, 19, 19, 18, 15, 7, 21, 9, 7, 10, 11, 19, 15, 7, 13, 13, 7])
+# myArray = Array(items=[40, 30, 50, 60, 40, 20, 30, 40, 20, 30, 60, 40, 50, 30, 50, 60, 20, 40])
 # print(myArray)
 # print(myArray.mean())
 # print(myArray.median())
